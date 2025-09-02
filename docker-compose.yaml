@@ -1,0 +1,35 @@
+version: "3.9"
+services:
+  ui:
+    build: ./ui
+    ports: ["5173:5173"]
+    environment:
+      - VITE_API_BASE=${VITE_API_BASE:-http://localhost:3000/api}
+      - VITE_APP_NAME=${VITE_APP_NAME:-MedAssist CDS}
+    depends_on: [backend]
+    networks: [appnet]
+  backend:
+    build: ./backend
+    ports: ["3000:3000"]
+    env_file: ./backend/.env
+    depends_on: [mongo, ai_service]
+    networks: [appnet]
+  ai_service:
+    build: ./ai_service
+    env_file: ./ai_service/.env
+    volumes:
+      - chroma:/chroma-data
+      - ./ai_service/data:/app/data
+    ports: ["8000:8000"]
+    networks: [appnet]
+  mongo:
+    image: mongo:7
+    ports: ["27017:27017"]
+    volumes:
+      - mongodata:/data/db
+    networks: [appnet]
+volumes:
+  mongodata:
+  chroma:
+networks:
+  appnet:

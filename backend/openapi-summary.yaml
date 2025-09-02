@@ -1,0 +1,13 @@
+openapi: 3.0.3
+info: { title: MedAssist Backend API, version: "1.0.0" }
+paths:
+  /api/auth/signup:
+    post:
+      requestBody: { required: true, content: { application/json: { schema: { type: object, properties: { name:{type:string}, email:{type:string}, password:{type:string} }, required: [email, password] } } } }
+      responses: { "200": { description: OK } }
+  /api/auth/login: { post: { responses: { "200": { description: OK } } } }
+  /api/chat/session: { post: { security: [ { bearerAuth: [] } ], responses: { "200": { description: OK } } } }
+  /api/chat/query: { post: { security: [ { bearerAuth: [] } ], responses: { "200": { description: OK } } } }
+  /api/chat/history: { get: { security: [ { bearerAuth: [] } ], responses: { "200": { description: OK } } } }
+components:
+  securitySchemes: { bearerAuth: { type: http, scheme: bearer, bearerFormat: JWT } }

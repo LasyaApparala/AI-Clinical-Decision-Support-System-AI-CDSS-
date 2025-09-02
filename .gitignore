@@ -1,0 +1,64 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+pip-log.txt
+
+# Environment variables
+*.env
+
+# Logs
+logs/
+*.log
+debug.log
+error.log
+
+# Build output
+dist/
+build/
+.cache/
+.next/
+out/
+coverage/
+*.tsbuildinfo
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# MongoDB / Databases
+*.db
+*.sqlite3
+chroma_db/
+
+# Docker
+*.pid
+*.seed
+docker-compose.override.yml
+
+# Misc
+*.bak
+*.tmp
