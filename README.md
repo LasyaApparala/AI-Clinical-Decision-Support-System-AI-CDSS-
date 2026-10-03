@@ -1,3 +1,4 @@
+**Publication Status:** Associated research paper on AI-based Clinical Decision Support Systems currently under review / pending publication (2026).
 # Clinical AI LAS - AI Clinical Decision Support Platform
 
 A comprehensive AI-powered clinical decision support system built with React, Node.js, and Python.
